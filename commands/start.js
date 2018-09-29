@@ -13,7 +13,7 @@ if (!message.member.roles.find(r => r.name === "Scrim Staff")) return;
 	let negicon = message.author.displayAvatarURL;
 	let todaysDate = new Date();
 	let infoScrimEmbed = new Discord.RichEmbed()
-	.setTitle("Fortnite Pro Elite SCRRIM info", nficon)
+	.setTitle("Fortnite Pro Elite SCRIM info", nficon)
 	.addField("Organizada por:", message.author)
 	.addField("Cargando contenido", "Cargue contenido presionando Listo para cargar contenido para que esté al 100%, luego presione cancelar.")
 	.addField("Reglas:", "**Using C4, Clingers and Third Partying in top 10 are now allowed**!, please obey the rules while scrimming. Also please report players with !report, and do not publicly announce it.")
