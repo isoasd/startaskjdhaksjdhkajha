@@ -1,6 +1,8 @@
 const Discord = require("discord.js");
 const YTDL = require("ytdl-core");
 const opusscript = require("opusscript");
+const fs = require('fs');
+
 // const ms = require("ms");
 
 module.exports.run = async (bot, message, args) => {
