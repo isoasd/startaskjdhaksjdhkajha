@@ -51,26 +51,26 @@ if (!message.member.roles.find(r => r.name === "Scrim Staff")) return;
 	.addField("Por favor ingrese los ultimos 3 digitos de su servidor!", "Dentro del juego puedes encontrar esto en la esquina superior izquierda de la pantalla.")
 	.setColor(6812512);
 	scrimlast3chan.send(starting);
-// 		let nextgameEmbed = new Discord.RichEmbed()
-//  	.setTitle("**Next snipe in approx...**")
-//  	.setDescription("*25 Minutes*")
-//  	.setColor(13859315);
-// 	(async () => {
-// 		const endTime = Date.now() + 1000 * 60 * 25;
+ 		let nextgameEmbed = new Discord.RichEmbed()
+  	.setTitle("**Proximo scrim en aproximadamente...**")
+  	.setDescription("*30 Minutes*")
+  	.setColor(13859315);
+ 	(async () => {
+ 		const endTime = Date.now() + 1000 * 60 * 30;
 
-// 	const sentMessage = await scrimlast3chan.send(nextgameEmbed);
+ 	const sentMessage = await scrimlast3chan.send(nextgameEmbed);
 
-// 	while( (now = Date.now()) < endTime ) {
-// 		let minsRemaining = (endTime - now) / (1000 * 60);
-// 		minsRemaining = Math.floor(minsRemaining);
-// 		nextgameEmbed.setDescription(`*${minsRemaining} Minutes.*`)
-// 		sentMessage.edit(nextgameEmbed);
-// 		await startTimeout(1000 * 60);
-// 	}
+ 	while( (now = Date.now()) < endTime ) {
+ 		let minsRemaining = (endTime - now) / (1000 * 60);
+ 		minsRemaining = Math.floor(minsRemaining);
+ 		nextgameEmbed.setDescription(`*${minsRemaining} Minutos.*`)
+ 		sentMessage.edit(nextgameEmbed);
+ 		await startTimeout(1000 * 60);
+ 	}
 	
-// 	})()
-	
-// 	async()
+ 	})()
+
+ 	async()
 	
 	let gameinfo = new Discord.RichEmbed()
 	.setTitle("Informacion de la partida")
