@@ -1,11 +1,12 @@
 const Discord = require("discord.js");
 const YTDL = require("ytdl-core");
+const fs = require("fs");
 // const ms = require("ms");
 
 module.exports.run = async (bot, message, args) => {
 if (!message.member.roles.find(r => r.name === "Scrim Staff")) return;
 
-
+//
 const yeetTim = ms => new Promise(res => setTimeout(res, ms))
 	await yeetTim(2000);
 		var servers = {};
@@ -40,7 +41,7 @@ const yeetTim = ms => new Promise(res => setTimeout(res, ms))
 
 
 
-
+//
 
 	let scrimlast3chan = message.guild.channels.find(`name`, "scrim-last3");
 	scrimlast3chan.overwritePermissions(message.guild.id, {
