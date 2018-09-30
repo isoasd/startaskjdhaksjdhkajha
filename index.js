@@ -154,6 +154,26 @@ bot.on("message", async message => {
 				);
 
 			}
+
+			let nextgameEmbed = new Discord.RichEmbed()
+  	.setTitle("**Next snipe in approx...**")
+  	.setDescription("*25 Minutes*")
+  	.setColor(13859315);
+ 	(async () => {
+ 		const endTime = Date.now() + 1000 * 60 * 25;
+
+ 	const sentMessage = await scrimlast3chan.send(nextgameEmbed);
+ 	while( (now = Date.now()) < endTime ) {
+ 		let minsRemaining = (endTime - now) / (1000 * 60);
+ 		minsRemaining = Math.floor(minsRemaining);
+ 		nextgameEmbed.setDescription(`*${minsRemaining} Minutes.*`)
+ 		sentMessage.edit(nextgameEmbed);
+ 		await startTimeout(1000 * 60);
+ 	}
+	
+ 	})()
+	
+ 	async()
 				
  			 
 			last3chan.fetchMessages({limit: 1}).then(m => m.first().edit(eb));
