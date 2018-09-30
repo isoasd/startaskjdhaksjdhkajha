@@ -154,9 +154,7 @@ bot.on("message", async message => {
 				);
 
 			}
-
 			
-				
  			 
 			last3chan.fetchMessages({limit: 1}).then(m => m.first().edit(eb));
 			
