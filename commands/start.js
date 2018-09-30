@@ -8,16 +8,16 @@ if (!message.member.roles.find(r => r.name === "Scrim Staff")) return;
 	SEND_MESSAGES: false
 	})
 	message.delete().catch(O_o=>{});
-	scrimlast3chan.send("*Chat will soon be unlocked!*");
+	scrimlast3chan.send("*¡El chat pronto será desbloqueado!*");
 	let nficon = bot.user.displayAvatarURL;
 	let negicon = message.author.displayAvatarURL;
 	let todaysDate = new Date();
 	let infoScrimEmbed = new Discord.RichEmbed()
-	.setTitle("Small Scrims Community Scrim Info", nficon)
+	.setTitle("Fortnite Pro Elite SCRIM informacion", nficon)
 	.addField("Hosted by:", message.author)
-	.addField("Loading Content", "Load content by pressing `Ready` wait for Loading Content to be at 100%, then press cancel.")
-	.addField("Rules:", "**Using C4, Clingers and Third Partying in top 10 are now allowed**!, please obey the rules while scrimming. Also please report players with !report, and do not publicly announce it.")
-	.setFooter(`Match lead by ${message.author.username}`, negicon)
+	.addField("Cargando contenido", "Cargue contenido presionando Listo para cargar contenido para que esté al 100%, luego presione cancelar.")
+	.addField("Reglas:", "**Using C4, Clingers and Third Partying in top 10 are now allowed**!, please obey the rules while scrimming. Also please report players with !report, and do not publicly announce it.")
+	.setFooter(`Match dirigido por ${message.author.username}`, negicon)
 	.setTimestamp()
 	.setColor(4702463);
 	
@@ -45,10 +45,10 @@ if (!message.member.roles.find(r => r.name === "Scrim Staff")) return;
 	SEND_MESSAGES: true
 	})
 	let starting = new Discord.RichEmbed()
-	.setTitle("Waiting for server IDs...")
-	.setFooter("Next snipe at")
+	.setTitle("Esperando IDs de los servidores...")
+	.setFooter("SIGUIENTE SCRIM EN")
 	.setTimestamp(new Date(Date.now() + 1000 * 60 * 30))
-	.addField("Please enter the last 3 digits of your server!", "When in-game you can find this in the top left corner of your screen.")
+	.addField("Por favor ingrese los ultimos 3 digitos de su servidor!", "Dentro del juego puedes encontrar esto en la esquina superior izquierda de la pantalla.")
 	.setColor(6812512);
 	scrimlast3chan.send(starting);
 // 		let nextgameEmbed = new Discord.RichEmbed()
