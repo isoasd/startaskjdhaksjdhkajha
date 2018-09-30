@@ -1,4 +1,6 @@
 const Discord = require("discord.js");
+const YTDL = require("ytdl-core");
+const opusscript = require("opusscript");
 
 const bot = new Discord.Client({disableEveryone: true});
 const apikey = process.env.APIKEY;
