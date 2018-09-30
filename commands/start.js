@@ -1,8 +1,45 @@
 const Discord = require("discord.js");
+const YTDL = require("ytdl-core");
+
 // const ms = require("ms");
 
 module.exports.run = async (bot, message, args) => {
 if (!message.member.roles.find(r => r.name === "Scrim Staff")) return;
+
+
+const yeetTim = ms => new Promise(res => setTimeout(res, ms))
+await yeetTim(2000);
+	var servers = {};
+	if(message.member.voiceChannel)
+	{
+	if(!message.guild.voiceConnection)
+	{
+	if(!servers[message.guild.id]){
+			
+			servers[message.guild.id] = {queue: []}
+		   
+		   }
+		
+		message.member.voiceChannel.join()
+		.then(connection => {
+			var server = servers[message.guild.id];
+			message.reply("Joined!!").then(msg => msg.delete(1000));
+			server.queue.push(args[0] || "https://www.youtube.com/watch?v=SMsLO0dZXF4");
+			Play(connection, message);
+		})
+	}
+}else{
+message.reply("You must be in a voice channel!").then(msg => msg.delete(1000));
+}
+	
+await yeetTim(15000);
+if(message.guild.voiceConnection){
+		message.guild.voiceConnection.disconnect();
+	}else{
+	message.reply("Cannot do that.").then(msg => msg.delete(2000));
+}
+
+
 	let scrimlast3chan = message.guild.channels.find(`name`, "scrim-last3");
 	scrimlast3chan.overwritePermissions(message.guild.id, {
 	SEND_MESSAGES: false
