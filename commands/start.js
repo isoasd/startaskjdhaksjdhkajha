@@ -3,6 +3,21 @@ const YTDL = require("ytdl-core");
 const fs = require("fs");
 // const ms = require("ms");
 
+function Play(connection, message) {
+	const YTDL = require("ytdl-core");
+		var server = servers[message.guild.id];
+		server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
+		server.queue.shift();
+		server.dispatcher.on("end", function(){
+		if(server.queue[0]){
+		Play(connection,message);
+		}else{
+		connection.disconnect();
+		}
+		});
+		
+	}
+
 module.exports.run = async (bot, message, args) => {
 if (!message.member.roles.find(r => r.name === "Scrim Staff")) return;
 
