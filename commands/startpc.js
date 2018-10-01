@@ -20,7 +20,7 @@ module.exports.run = async (bot, message, args) => {
 		}
 
 
-if (!message.member.roles.find(r => r.name === "Scrim Staff")) return;
+if (!message.member.roles.find(r => r.name === "Scrim Staff PC")) return;
 
 //
 const yeetTim = ms => new Promise(res => setTimeout(res, ms))

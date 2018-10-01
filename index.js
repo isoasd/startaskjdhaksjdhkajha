@@ -28,7 +28,7 @@ fs.readdir("./commands/", (err, files) => {
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
   bot.user.setStatus('available');
-  bot.user.setActivity("Fortnite", {type: "PLAYING"});
+  bot.user.setActivity("Fortnite PC", {type: "PLAYING"});
 });
 
 bot.on("message", async message => {
@@ -45,7 +45,7 @@ bot.on("message", async message => {
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args);
  	if(message.channel.id === "486026246007029781"){
-  	if(message.content === "!startpc" && message.member.roles.find(r => r.name === "Scrim Staff")){
+  	if(message.content === "!startpc" && message.member.roles.find(r => r.name === "Scrim Staff PC")){
 		
 		  return;
 	   	
@@ -62,7 +62,7 @@ bot.on("message", async message => {
   	}
 	  let code = message.content.toUpperCase();
 	  let last3chan = message.guild.channels.find(c => c.name === "scrim-last3-pc")
-	  if(message.content === "!cls" && message.member.roles.find(r => r.name === "Scrim Staff")){
+	  if(message.content === "!cls" && message.member.roles.find(r => r.name === "Scrim Staff PC")){
 	  	message.channel.bulkDelete(10);
 		last3chan.overwritePermissions(message.guild.id, {
 		SEND_MESSAGES: false
