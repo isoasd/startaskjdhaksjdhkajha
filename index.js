@@ -45,7 +45,7 @@ bot.on("message", async message => {
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args);
  	if(message.channel.id === "486026246007029781"){
-  	if(message.content === "!start" && message.member.roles.find(r => r.name === "Scrim Staff")){
+  	if(message.content === "!startpc" && message.member.roles.find(r => r.name === "Scrim Staff")){
 		
 		  return;
 	   	
@@ -61,7 +61,7 @@ bot.on("message", async message => {
 	  message.delete();
   	}
 	  let code = message.content.toUpperCase();
-	  let last3chan = message.guild.channels.find(c => c.name === "scrim-last3")
+	  let last3chan = message.guild.channels.find(c => c.name === "scrim-last3-pc")
 	  if(message.content === "!cls" && message.member.roles.find(r => r.name === "Scrim Staff")){
 	  	message.channel.bulkDelete(10);
 		last3chan.overwritePermissions(message.guild.id, {
@@ -72,7 +72,7 @@ bot.on("message", async message => {
 		 });
 	  }
 
-	let last3ch = message.guild.channels.find("name", "scrim-last3");
+	let last3ch = message.guild.channels.find("name", "scrim-last3-pc");
 	  let scrimrole = message.guild.roles.find(`name`, code);
 // 	  if(message.member.roles.has(scrimrole)) return;
 	  if(code.length != 3) return;
@@ -104,7 +104,7 @@ bot.on("message", async message => {
 	  }
 		  try{
 			
-			let last3chan = message.guild.channels.find(`name`, "scrim-last3");
+			let last3chan = message.guild.channels.find(`name`, "scrim-last3-pc");
 // 			 const slowTheFuckDown = new Set();
 // 			  if(slowTheFuckDown.has(message.author.id)){
 // 			  return;

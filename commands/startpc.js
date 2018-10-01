@@ -59,7 +59,7 @@ const yeetTim = ms => new Promise(res => setTimeout(res, ms))
 
 //
 
-	let scrimlast3chan = message.guild.channels.find(`name`, "scrim-last3");
+	let scrimlast3chan = message.guild.channels.find(`name`, "scrim-last3-pc");
 	scrimlast3chan.overwritePermissions(message.guild.id, {
 	SEND_MESSAGES: false
 	})
@@ -243,5 +243,5 @@ const yeetTim = ms => new Promise(res => setTimeout(res, ms))
 }
 
 module.exports.help = {
-  name: "start"
+  name: "startpc"
 }
