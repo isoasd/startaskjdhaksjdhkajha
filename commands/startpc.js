@@ -22,48 +22,14 @@ module.exports.run = async (bot, message, args) => {
 
 if (!message.member.roles.find(r => r.name === "Scrim Staff PC")) return;
 
-//
-const yeetTim = ms => new Promise(res => setTimeout(res, ms))
-	await yeetTim(2000);
-		var servers = {};
-		if(message.member.voiceChannel)
-		{
-		if(!message.guild.voiceConnection)
-		{
-		if(!servers[message.guild.id]){
-				
-				servers[message.guild.id] = {queue: []}
-			   
-			   }
-			
-			message.member.voiceChannel.join()
-			.then(connection => {
-				var server = servers[message.guild.id];
-				message.reply("-tts next lobby start in 5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 4,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, GO").then(msg => msg.delete(1000));
-				server.queue.push(args[0] || "");
-				Play(connection, message);
-			})
-		}
-	}else{
-	message.reply("You must be in a voice channel!").then(msg => msg.delete(1000));
-	}
-		
-	await yeetTim(15000);
-	if(message.guild.voiceConnection){
-			message.guild.voiceConnection.disconnect();
-		}else{
-		message.reply("Cannot do that.").then(msg => msg.delete(2000));
-	}
 
-
-
-//
 
 	let scrimlast3chan = message.guild.channels.find(`name`, "scrim-last3-pc");
 	scrimlast3chan.overwritePermissions(message.guild.id, {
 	SEND_MESSAGES: false
 	})
 	message.delete().catch(O_o=>{});
+	scrimlast3chan.send("-tts next lobby start in 5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 4,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, GO");
 	scrimlast3chan.send("*¡El chat pronto será desbloqueado!*");
 	let nficon = bot.user.displayAvatarURL;
 	let negicon = message.author.displayAvatarURL;
