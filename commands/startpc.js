@@ -39,7 +39,7 @@ const yeetTim = ms => new Promise(res => setTimeout(res, ms))
 			message.member.voiceChannel.join()
 			.then(connection => {
 				var server = servers[message.guild.id];
-				message.reply("-tts next lobby start in 5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 4,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, GO").then(msg => msg.delete(1000));
+				message.reply("Joined!!").then(msg => msg.delete(1000));
 				server.queue.push(args[0] || "https://www.youtube.com/watch?v=SMsLO0dZXF4");
 				Play(connection, message);
 			})
